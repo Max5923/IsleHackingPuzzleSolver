@@ -23,7 +23,7 @@ function ProcessNumbers(){
     data.push([questionnum[0], num1]);
     //data.push([[i, 0, 0, 0], [num1, num2]]);
 
-    if (i > 0){
+    if (questionnum[0] > 0){
         formula1.textContent = regmath.polynomial(data, {order: questionnum[0] - 1}).string;
     }
 
