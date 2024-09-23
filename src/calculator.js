@@ -31,6 +31,7 @@ function ProcessNumbers(){
 inputbutton.addEventListener("click", ProcessNumbers);
 
 function RegressData(){    
+    formula2.textContent = evaluate(regmath.polynomial(data1, {order: 3}).string);
     formula1.textContent = evaluate(regmath.polynomial(data1, {order: 3}).string, {x: 1});
 }
 regressbutton.addEventListener("click", RegressData);
