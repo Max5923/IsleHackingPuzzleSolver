@@ -29,7 +29,7 @@ function ProcessNumbers(){
     let regformula = regmath.polynomial(data, {order: questionnum[0] - 1}).string;
     let invalidation = false;
     if (questionnum[0] > 0){
-        
+        devoutput.textContent = (questionnum > 0).toString();
         for (let i = 0; i < questionnum[0] | invalidation; i++){
             if(evaluate(regformula, {x: i}) != tempdata[i]){
                 invalidation = true;
