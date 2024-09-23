@@ -12,24 +12,23 @@ const formula1 = document.getElementById("formula1")
 const formula2 = document.getElementById("formula2")
 const devoutput = document.getElementById("devoutput")
 
-var data = []
+var data = [];
+var questionnum = [0, 0, 0, 0];
 
-var i = 0;
 function ProcessNumbers(){
 
     let num1 = parseInt(number1.value);
     let num2 = parseInt(number2.value);
 
-    data.push([i, num1]);
+    data.push([questionnum[0], num1]);
     //data.push([[i, 0, 0, 0], [num1, num2]]);
 
     if (i > 0){
-        formula1.textContent = regmath.polynomial(data, {order: i - 1}).string;
+        formula1.textContent = regmath.polynomial(data, {order: questionnum[0] - 1}).string;
     }
 
-    i++;
-    questionout.textContent = "Enter " + i.toString() + ", 0, 0, 0";
-    //questionout.textContent = evaluate(result, {a: numa, b: numb}).toString();
+    questionnum[0]++;
+    questionout.textContent = "Enter " + questionnum.toString();
 }
 inputbutton.addEventListener("click", ProcessNumbers);
 
