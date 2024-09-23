@@ -1,5 +1,5 @@
-import {evaluate} from '/.mathjs'
-import * as regmath from './regression'
+import {evaluate} from 'mathjs'
+import * as regmath from 'regression'
 
 const number1 = document.getElementById("number1")
 const number2 = document.getElementById("number2")
