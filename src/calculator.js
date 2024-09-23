@@ -10,28 +10,31 @@ const regressbutton = document.getElementById("regress")
 const questionout = document.getElementById("question")
 const formula1 = document.getElementById("formula1")
 const formula2 = document.getElementById("formula2")
+const devoutput = document.getElementById("devoutput")
 
-var data1 = []
-//var data2 = []
+var data = []
 
 var i = 0;
 function ProcessNumbers(){
 
-    let numa = parseInt(number1.value);
+    let num1 = parseInt(number1.value);
+    let num2 = parseInt(number2.value);
 
-    data1.push([i, numa])
+    data.push([i, num1]);
+    //data.push([[i, 0, 0, 0], [num1, num2]]);
 
-    //let numb = parseInt(number2.value);
-    //let result = 'a + b'
+    if (i > 0){
+        formula1.textContent = regmath.polynomial(data, {order: i - 1}).string;
+    }
 
-    i++
+    i++;
     questionout.textContent = "Enter " + i.toString() + ", 0, 0, 0";
     //questionout.textContent = evaluate(result, {a: numa, b: numb}).toString();
 }
 inputbutton.addEventListener("click", ProcessNumbers);
 
-function RegressData(){    
-    formula2.textContent = evaluate(regmath.polynomial(data1, {order: 3}).string);
-    formula1.textContent = evaluate(regmath.polynomial(data1, {order: 3}).string, {x: 1});
+function RegressData(){
+    formula1.textContent = regmath.polynomial(data, {order: 3}).string;
+    devoutput.textContent = evaluate(regmath.polynomial(data, {order: 3}).string, {x: 1});
 }
 regressbutton.addEventListener("click", RegressData);
