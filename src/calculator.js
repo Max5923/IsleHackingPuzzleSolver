@@ -1,5 +1,5 @@
-import {evaluate} from 'mathjs'
-import * as regmath from 'regression'
+import {evaluate} from '/.mathjs'
+import * as regmath from './regression'
 
 const number1 = document.getElementById("number1")
 const number2 = document.getElementById("number2")
@@ -25,12 +25,12 @@ function ProcessNumbers(){
     //let result = 'a + b'
 
     i++
-    questionout.textContent = "Enter a = " + i.toString();
+    questionout.textContent = "Enter " + i.toString() + ", 0, 0, 0";
     //questionout.textContent = evaluate(result, {a: numa, b: numb}).toString();
 }
 inputbutton.addEventListener("click", ProcessNumbers);
 
 function RegressData(){    
-    formula1.textContent = regmath.polynomial(data1, {order: 3}).string
+    formula1.textContent = evaluate(regmath.polynomial(data1, {order: 3}).string);
 }
 regressbutton.addEventListener("click", RegressData);
