@@ -30,7 +30,7 @@ function ProcessNumbers(){
     let invalidation = true;
     if (questionnum[0] > 0){
         let invalidation = false;
-        devoutput.textContent = (i < questionnum[0]).toString;
+        devoutput.textContent = (0 < questionnum[0]).toString + ", " + (evaluate(regformula, {x: i})).toString + ", " + (tempdata[0]).toString();
         /*for (let i = 0; i < questionnum[0] || invalidation; i++){
             if(evaluate(regformula, {x: i}) != tempdata[i]){
                 invalidation = true;
