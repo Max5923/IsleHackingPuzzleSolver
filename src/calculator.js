@@ -28,7 +28,7 @@ function ProcessNumbers(){
 
     let regformula = regmath.polynomial(data, {order: questionnum[0] - 1}).string;
     let invalidation = true;
-    if (questionnum[0] > 0){
+    /*if (questionnum[0] > 0){
         let invalidation = false;
         devoutput.textContent = "test";
         /*for (let i = 0; i < questionnum[0] || invalidation; i++){
@@ -36,7 +36,7 @@ function ProcessNumbers(){
                 invalidation = true;
             }
         }*/
-    }
+    //}
 
     if(invalidation){
         questionnum[0]++;
