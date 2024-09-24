@@ -31,18 +31,18 @@ function ProcessNumbers(){
     if (questionnum[0] > 0){
         let invalidation = false;
         devoutput.textContent = "test";
-        for (let i = 0; i < questionnum[0] || invalidation; i++){
+        /*for (let i = 0; i < questionnum[0] || invalidation; i++){
             if(evaluate(regformula, {x: i}) != tempdata[i]){
                 invalidation = true;
             }
-        }
+        }*/
     }
 
     if(invalidation){
         questionnum[0]++;
         questionout.textContent = "Enter " + questionnum.toString();
     } else{
-        questionout.textContent = regformula;
+        formula1.textContent = regformula;
     }
 
 }
