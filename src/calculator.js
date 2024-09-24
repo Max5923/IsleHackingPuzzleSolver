@@ -28,15 +28,15 @@ function ProcessNumbers(){
 
     let regformula = regmath.polynomial(data, {order: questionnum[0] - 1}).string;
     let invalidation = true;
-    /*if (questionnum[0] > 0){
+    if (questionnum[0] > 0){
         let invalidation = false;
-        devoutput.textContent = "test";
+        devoutput.textContent = (i < questionnum[0]).toString;
         /*for (let i = 0; i < questionnum[0] || invalidation; i++){
             if(evaluate(regformula, {x: i}) != tempdata[i]){
                 invalidation = true;
             }
         }*/
-    //}
+    }
 
     if(invalidation){
         questionnum[0]++;
